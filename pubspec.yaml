@@ -1,9 +1,34 @@
+name: splitease
+description: A modern expense splitting app.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'  # <--- THIS WAS MISSING AND CAUSED THE ERROR
+
 dependencies:
   flutter:
     sdk: flutter
+  
+  # State Management
   provider: ^6.1.1
+  
+  # Data Storage
   shared_preferences: ^2.2.2
+  
+  # Utilities
   intl: ^0.19.0
   uuid: ^4.3.3
+  
+  # UI & Design
   google_fonts: ^6.1.0
-  animate_do: ^3.3.2 # For those smooth, professional animations
+  animate_do: ^3.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
