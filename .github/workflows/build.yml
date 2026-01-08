@@ -26,11 +26,16 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
 
+      # --- THIS IS THE NEW MAGIC STEP ---
+      - name: Fix Project Structure
+        run: flutter create . --project-name splitease
+      # ----------------------------------
+
       - name: Install Dependencies
         run: flutter pub get
 
       - name: Build APK
-        run: flutter build apk --release
+        run: flutter build apk --release --no-tree-shake-icons
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
